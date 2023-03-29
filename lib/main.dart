@@ -1,9 +1,14 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router_main/routes/routes.dart';
+import 'package:meta_seo/meta_seo.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 void main() {
   setPathUrlStrategy  ();
+  if (kIsWeb) {
+    MetaSEO().config();
+  }
   runApp(const MyApp());
 }
 
